@@ -3,6 +3,7 @@ import {redirect} from "@sveltejs/kit";
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ locals, cookies }) {
+    //TODO: pagination
     let token = cookies.get('jwt')
     console.log(token)
     if (token) {

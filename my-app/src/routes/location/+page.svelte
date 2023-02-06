@@ -1,9 +1,10 @@
 <script>
     import { page } from '$app/stores';
-    import ArticleList from '$lib/ArticleList/index.svelte';
+    import FilmPreview from "$lib/FilmList/FilmPreview.svelte";
 
     /** @type {import('./$types').PageData} */
     export let data;
+
 </script>
 
 <svelte:head>
@@ -16,10 +17,12 @@
         <ul class="tag-list">
             {#each data.roger as film}
                 <li class="tag-default tag-pill tag-outline">{film.filmName}</li>
+                    <FilmPreview {film}/>
             {/each}
         </ul>
         <button><li class="nav-item">
-            <a href="/login" class="nav-link">Sign in to see your Feed</a></button>
+            <a href="/login" class="nav-link">Sign in to see your Feed</a>
+        </button>
 
     {:else}
         <button>
