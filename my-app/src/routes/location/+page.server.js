@@ -14,7 +14,6 @@ export async function load({ locals, cookies }) {
             api.get(`locations`, token),
             api.get('users/me',token)
         ]);
-        console.log(user)
         return {
             roger: articles,
             token,
@@ -48,11 +47,11 @@ export const actions = {
 
         };
         console.log(location)
-        console.log(await api.post(
+        await api.post(
             `locations/`,
             location,
             cookies.get('jwt')
-        ));
+        );
     },
 
     deleteLocation: async ({ cookies,url }) => {
@@ -66,10 +65,10 @@ export const actions = {
         //throw redirect(307, '/');
     },
 
-    deleteArticle: async ({ locals, params }) => {
-        if (!locals.user) throw error(401);
-
-        await api.del(`articles/${params.slug}`, locals.user.token);
-        throw redirect(307, '/');
+    editLocation: async ({ cookies,url }) => {
+        const id = url.searchParams.get('id');
+        console.log('-------------------')
+        //throw redirect(307, '/');
     },
+
 };
