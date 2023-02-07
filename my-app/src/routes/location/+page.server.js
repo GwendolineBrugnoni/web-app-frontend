@@ -30,16 +30,29 @@ export const actions = {
 
         let token = cookies.get('jwt')
         const data = await request.formData();
-
-        await api.post(
-            `articles/${params.slug}/comments`,
-            {
-                comment: {
-                    body: data.get('comment')
-                }
+        const location = {
+            geolocation:{
+                coordinates: [parseFloat(data.get('lattitude')),parseFloat(data.get('longitude'))],
+                type: "Point"
             },
-            locals.user.token
-        );
+            filmType: data.get('filmType'),
+            filmProducerName: data.get('filmProducerName'),
+            endDate: data.get('endDate'),
+            filmName: data.get('filmName'),
+            district: data.get('district'),
+            sourceLocationId: data.get('sourceLocationId'),
+            filmDirectorName: data.get('filmDirectorName'),
+            address: data.get('address'),
+            startDate: data.get('startDate'),
+            year: data.get('year'),
+
+        };
+        console.log(location)
+        console.log(await api.post(
+            `locations/`,
+            location,
+            cookies.get('jwt')
+        ));
     },
 
     deleteLocation: async ({ cookies,url }) => {
