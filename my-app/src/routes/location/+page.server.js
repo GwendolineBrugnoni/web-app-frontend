@@ -65,10 +65,31 @@ export const actions = {
         //throw redirect(307, '/');
     },
 
-    editLocation: async ({ cookies,url }) => {
+    editLocation: async ({ cookies,url,request }) => {
+        console.log("--------------")
         const id = url.searchParams.get('id');
-        console.log('-------------------')
-        //throw redirect(307, '/');
+        let token = cookies.get('jwt')
+        const data = await request.formData();
+        const location = {
+            geolocation:{
+                coordinates: [parseFloat(data.get('lattitude')),parseFloat(data.get('longitude'))],
+                type: "Point"
+            },
+            filmType: data.get('filmType'),
+            filmProducerName: data.get('filmProducerName'),
+            endDate: data.get('endDate'),
+            filmName: data.get('filmName'),
+            district: data.get('district'),
+            sourceLocationId: data.get('sourceLocationId'),
+            filmDirectorName: data.get('filmDirectorName'),
+            address: data.get('address'),
+            startDate: data.get('startDate'),
+            year: data.get('year')
+        };
+        console.log(id)
+        console.log(token)
+        console.log(location)
+        await api.patch(`locations/${id}`, token,location);
     },
 
 };

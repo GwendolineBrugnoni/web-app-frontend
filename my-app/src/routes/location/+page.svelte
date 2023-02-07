@@ -50,7 +50,7 @@
         <ul class="tag-list">
             {#each data.roger as film}
                 <li class="tag-default tag-pill tag-outline">{film.filmName}</li>
-                    <FilmPreview {film}/>
+                    <FilmPreview {film}{data}/>
                 {#if data.user.role === 'admin'}
                     <form use:enhance method="POST" action="?/deleteLocation&id={film._id}">
                         <button class="btn btn-outline-danger btn-sm">

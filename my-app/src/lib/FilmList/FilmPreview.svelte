@@ -2,7 +2,7 @@
     import { enhance } from '$app/forms';
 
     export let film;
-
+    export let data
     let details = false
     function Details() {
         if(details) details = false
@@ -32,11 +32,13 @@
         <p>Date de début du tournage : {film.startDate}</p>
         <p>Année : {film.year}</p>
     {/if}
+    {#if data.user.role === 'admin'}
     <button on:click={Edit}>
         EDIT
     </button>
+        {/if}
     {#if edit}
-        <form use:enhance method="POST" action="?/editLocation" class="card comment-form">
+        <form use:enhance method="POST" action="?/editLocation&id={film._id}" class="card comment-form">
             <textarea  name="lattitute" placeholder="lattitude" rows="1" >{film.geolocation.coordinates[0]}</textarea>
             <textarea  name="longitude" placeholder="longitude" rows="1" >{film.geolocation.coordinates[1]}</textarea>
             <textarea  name="filmType" placeholder="filmType" rows="1" >{film.filmType}</textarea>
@@ -49,7 +51,7 @@
             <textarea  name="address" placeholder="address" rows="1" >{film.address}</textarea>
             <textarea  name="startDate" placeholder="startDate" rows="1" >{film.startDate}</textarea>
             <textarea  name="year" placeholder="year" rows="1" >{film.year}</textarea>
-            <button on:click={Edit}>
+            <button>
                 EDIT
             </button>
         </form>
