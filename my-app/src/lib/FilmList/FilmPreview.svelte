@@ -39,18 +39,18 @@
         {/if}
     {#if edit}
         <form use:enhance method="POST" action="?/editLocation&id={film._id}" class="card comment-form">
-            <textarea  name="lattitute" placeholder="lattitude" rows="1" >{film.geolocation.coordinates[0]}</textarea>
-            <textarea  name="longitude" placeholder="longitude" rows="1" >{film.geolocation.coordinates[1]}</textarea>
-            <textarea  name="filmType" placeholder="filmType" rows="1" >{film.filmType}</textarea>
-            <textarea  name="filmProducerName" placeholder="filmProducerName" rows="1" >{film.filmProducerName}</textarea>
-            <textarea  name="endDate" placeholder="endDate" rows="1" >{film.endDate}</textarea>
-            <textarea  name="filmName" placeholder="filmName" rows="1" >{film.filmName}</textarea>
-            <textarea  name="district" placeholder="district" rows="1" >{film.district}</textarea>
-            <textarea  name="sourceLocationId" placeholder="sourceLocationId" rows="1" >{film.sourceLocationId}</textarea>
-            <textarea  name="filmDirectorName" placeholder="filmDirectorName" rows="1" >{film.filmDirectorName}</textarea>
-            <textarea  name="address" placeholder="address" rows="1" >{film.address}</textarea>
-            <textarea  name="startDate" placeholder="startDate" rows="1" >{film.startDate}</textarea>
-            <textarea  name="year" placeholder="year" rows="1" >{film.year}</textarea>
+            <p>Lattitude : <textarea  name="lattitute" placeholder="lattitude" rows="1" >{film.geolocation.coordinates[0]}</textarea></p>
+            <p>Longitude : <textarea  name="longitude" placeholder="longitude" rows="1" >{film.geolocation.coordinates[1]}</textarea></p>
+            <p>Type de film : <textarea  name="filmType" placeholder="filmType" rows="1" >{film.filmType}</textarea></p>
+            <p>Nom du producteur : <textarea  name="filmProducerName" placeholder="filmProducerName" rows="1" >{film.filmProducerName}</textarea></p>
+            <p>Date de fin : <textarea  name="endDate" placeholder="endDate" rows="1" >{film.endDate}</textarea></p>
+            <p>Nom du film : <textarea  name="filmName" placeholder="filmName" rows="1" >{film.filmName}</textarea></p>
+            <p>District : <textarea  name="district" placeholder="district" rows="1" >{film.district}</textarea></p>
+            <p>Source de l'Id : <textarea  name="sourceLocationId" placeholder="sourceLocationId" rows="1" >{film.sourceLocationId}</textarea></p>
+            <p>Nom du directeur du film : <textarea  name="filmDirectorName" placeholder="filmDirectorName" rows="1" >{film.filmDirectorName}</textarea></p>
+            <p>Adresse : <textarea  name="address" placeholder="address" rows="1" >{film.address}</textarea></p>
+            <p>Date de début : <textarea  name="startDate" placeholder="startDate" rows="1" >{film.startDate}</textarea></p>
+            <p>Année : <textarea  name="year" placeholder="year" rows="1" >{film.year}</textarea></p>
             <button>
                 EDIT
             </button>

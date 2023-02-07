@@ -26,18 +26,18 @@
             {#if create}
                 <form use:enhance method="POST" action="?/createLocation" class="card comment-form">
                     <div class="card-block">
-                        <textarea  name="lattitute" placeholder="lattitude" rows="1" >0</textarea>
-                        <textarea  name="longitude" placeholder="longitude" rows="1" >0</textarea>
-                        <textarea  name="filmType" placeholder="filmType" rows="1" >Court métrage</textarea>
-                        <textarea  name="filmProducerName" placeholder="filmProducerName" rows="1" >David Goodenough</textarea>
-                        <textarea  name="endDate" placeholder="endDate" rows="1" >2020-08-21T00:00:00.000</textarea>
-                        <textarea  name="filmName" placeholder="filmName" rows="1" >C'est moche mais fonctionnel</textarea>
-                        <textarea  name="district" placeholder="district" rows="1" >95100</textarea>
-                        <textarea  name="sourceLocationId" placeholder="sourceLocationId" rows="1" >2020-100</textarea>
-                        <textarea  name="filmDirectorName" placeholder="filmDirectorName" rows="1" >David Goodenough</textarea>
-                        <textarea  name="address" placeholder="address" rows="1" >Chez michel</textarea>
-                        <textarea  name="startDate" placeholder="startDate" rows="1" >2020-07-21T00:00:00.000</textarea>
-                        <textarea  name="year" placeholder="year" rows="1" >2020</textarea>
+                        <p>Lattitude : <textarea  name="lattitute" placeholder="lattitude" rows="1" >0</textarea></p>
+                        <p>Longitude : <textarea  name="longitude" placeholder="longitude" rows="1" >0</textarea></p>
+                        <p>Type de film : <textarea  name="filmType" placeholder="filmType" rows="1" >Court métrage</textarea></p>
+                        <p>Nom du producteur : <textarea  name="filmProducerName" placeholder="filmProducerName" rows="1" >David Goodenough</textarea></p>
+                        <p>Date de fin : <textarea  name="endDate" placeholder="endDate" rows="1" >2020-08-21T00:00:00.000</textarea></p>
+                        <p>Nom du film : <textarea  name="filmName" placeholder="filmName" rows="1" >C'est moche mais fonctionnel</textarea></p>
+                        <p>District : <textarea  name="district" placeholder="district" rows="1" >95100</textarea></p>
+                        <p>ID de la source : <textarea  name="sourceLocationId" placeholder="sourceLocationId" rows="1" >2020-100</textarea></p>
+                        <p>Nom du directeur : <textarea  name="filmDirectorName" placeholder="filmDirectorName" rows="1" >David Goodenough</textarea></p>
+                        <p>Adresse : <textarea  name="address" placeholder="address" rows="1" >Chez michel</textarea></p>
+                        <p>Date de début : <textarea  name="startDate" placeholder="startDate" rows="1" >2020-07-21T00:00:00.000</textarea></p>
+                        <p>Année : <textarea  name="year" placeholder="year" rows="1" >2020</textarea></p>
                     </div>
 
                     <div class="card-footer">
@@ -57,19 +57,12 @@
                             <i class="ion-trash-a" /> Delete
                         </button>
                     </form>
-                    <form use:enhance method="POST" action="?/deleteLocation&id={film._id}">
-                    </form>
-                    <form use:enhance method="POST" action="?/deleteLocation&id={film._id}">
-                        <button class="btn btn-outline-danger btn-sm">
-                            <i class="ion-trash-a" /> EDIT
-                        </button>
-                    </form>
 
                 {/if}
             {/each}
         </ul>
         <button><li class="nav-item">
-            <a href="/login" class="nav-link">Sign in to see your Feed</a>
+            <a href="/login" class="nav-link">Sign out</a>
         </button>
 
     {:else}
@@ -82,12 +75,12 @@
 </div>
 <style>
 button {
-    background: none;
+    text-decoration-color: black;
+    background: bisque;
     border: 100px;
-    padding: 0;
+    padding: 5px;
     margin: 0;
     font-size: inherit;
-    margin-left: 5px;
     opacity: 0.6;
     cursor: pointer;
 }

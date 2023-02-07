@@ -38,6 +38,6 @@ export function post(path, data, token) {
 }
 
 export function patch(path, token, data) {
-	console.log("yo")
+	console.log("yo"	)
 	return send({ method: 'PATCH', path, token, data });
 }
