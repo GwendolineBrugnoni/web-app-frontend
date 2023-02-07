@@ -8,6 +8,7 @@
         if(details) details = false
         else details = true
     }
+
 </script>
 
 <div class="article-preview">
@@ -27,3 +28,4 @@
         <p>Année : {film.year}</p>
     {/if}
 </div>
+

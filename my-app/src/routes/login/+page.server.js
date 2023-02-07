@@ -19,7 +19,7 @@ export const actions = {
 
             const body = await api.post('users/login',
             user);
-
+        console.log(body)
         if (body.errors) {
             return fail(401, body);
         }
