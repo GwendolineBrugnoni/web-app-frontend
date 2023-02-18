@@ -7,8 +7,6 @@ export async function load({ locals, cookies }) {
     let token = cookies.get('jwt')
     console.log(token)
     if (token) {
-        //const articles = await api.get(`locations`, token);
-        //const user = await api.get('users/me',token);
 
         const [articles, user] = await Promise.all([
             api.get(`locations`, token),
@@ -56,17 +54,10 @@ export const actions = {
 
     deleteLocation: async ({ cookies,url }) => {
         const id = url.searchParams.get('id');
-        console.log('-------------------')
-        console.log('id : ',id)
-        console.log('cookies: ',cookies.get("jwt"))
-        console.log('------------')
-
         await api.del(`locations/${id}`, cookies.get('jwt'));
-        //throw redirect(307, '/');
     },
 
     editLocation: async ({ cookies,url,request }) => {
-        console.log("--------------")
         const id = url.searchParams.get('id');
         let token = cookies.get('jwt')
         const data = await request.formData();

@@ -3,17 +3,17 @@
 
     export let film;
     export let data
+    let edit = false
     let details = false
+
     function Details() {
         if(details) details = false
         else details = true
     }
-    let edit = false
     function Edit() {
         if(edit) edit = false
         else edit = true
     }
-
 </script>
 
 <div class="article-preview">
@@ -21,22 +21,22 @@
         Details
     </button>
     {#if details}
-        <p>Type de film :            {film.filmType}</p>
-        <p>Nom du producteur:        {film.filmProducerName}</p>
-        <p>Date de fin du tournage : {film.endDate}</p>
-        <p>Numéro du district :      {film.district}</p>
-        <p>geolocation  : {film.geolocation.coordinates} {film.geolocation.type}</p>
-        <p>sourceLocationId : {film.sourceLocationId}</p>
-        <p>Dirigé par : {film.filmDirectorName}</p>
-        <p>Adresse : {film.address}</p>
+        <p>Type de film :              {film.filmType}</p>
+        <p>Nom du producteur:          {film.filmProducerName}</p>
+        <p>Date de fin du tournage :   {film.endDate}</p>
+        <p>Numéro du district :        {film.district}</p>
+        <p>geolocation  :              {film.geolocation.coordinates} {film.geolocation.type}</p>
+        <p>sourceLocationId :          {film.sourceLocationId}</p>
+        <p>Dirigé par :                {film.filmDirectorName}</p>
+        <p>Adresse :                   {film.address}</p>
         <p>Date de début du tournage : {film.startDate}</p>
-        <p>Année : {film.year}</p>
+        <p>Année :                     {film.year}</p>
     {/if}
     {#if data.user.role === 'admin'}
-    <button on:click={Edit}>
-        EDIT
-    </button>
-        {/if}
+        <button on:click={Edit}>
+            EDIT
+        </button>
+    {/if}
     {#if edit}
         <form use:enhance method="POST" action="?/editLocation&id={film._id}" class="card comment-form">
             <p>Lattitude : <textarea  name="lattitute" placeholder="lattitude" rows="1" >{film.geolocation.coordinates[0]}</textarea></p>

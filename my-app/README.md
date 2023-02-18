@@ -6,7 +6,7 @@ npm install
 npm run dev -- --open
 
 NOTE : j'ai utiliser le backend fourni 
-
+FF
 ### Reprise des consignes 
 1- Basic Layout
    The frontend is composed of at least:
