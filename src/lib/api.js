@@ -8,6 +8,7 @@ async function send({ method, path, data, token }) {
 	if (data) {
 		opts.headers['Content-Type'] = 'application/json';
 		opts.body = JSON.stringify(data);
+
 	}
 
 	if (token) {
