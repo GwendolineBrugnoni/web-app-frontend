@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 
-const base = 'https://test-backend-3k1e.onrender.com/';
+const base = 'https://test-backend-3k1e.onrender.com';
 
 async function send({ method, path, data, token }) {
 	const opts = { method, headers: {} };
